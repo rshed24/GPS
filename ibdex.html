@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>توجيه إلى المتجر...</title>
+    <script>
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // التحقق إذا كان الجهاز أندرويد
+            if (/android/i.test(userAgent)) {
+                window.location.replace("https://play.google.com/store/apps/details?id=navigation.arrow.gps");
+            }
+            // التحقق إذا كان الجهاز آيفون أو آيباد
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.replace("https://apps.apple.com/sa/app/arrow-gps-/id6760430781?l=ar");
+            }
+            // إذا كان كمبيوتر أو جهاز آخر (https://desertsa.com)
+            else {
+                window.location.replace("https://play.google.com/store/apps/details?id=navigation.arrow.gps"); 
+            }
+        };
+    </script>
+</head>
+<body>
+    <p style="text-align: center; font-family: sans-serif; margin-top: 50px;">
+        جاري تحويلك إلى المتجر المناسب...
+    </p>
+</body>
+</html>
